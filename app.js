@@ -144,6 +144,38 @@ allAnimals.forEach(function(animal) {
     }
 })
 
+function setText() {
+    let animalsText = document.getElementById("animals-text")
+    let template = ""
+    allAnimals.forEach(animal => {
+        //console.log(animal)
+        template += `${animal.name}, `
+        console.log(template)
+    })
+
+    animalsText.innerHTML = template;
+}
+
+function setModifyText() {
+    let maleAnimalsText = document.getElementById("male-text")
+    let femaleAnimalsText = document.getElementById("female-text")
+    let template = ""
+    maleAnimals.forEach(animal => {
+        //console.log(animal)
+        template += `${animal.name}, `
+        //console.log(template)
+    })
+    maleAnimalsText.innerHTML = 'Males: ' + template;
+    template = ""
+    femaleAnimals.forEach(animal => {
+        template += `${animal.name}, `
+    })
+    femaleAnimalsText.innerHTML = 'Females: ' + template;
+}
+
+setText()
+setModifyText()
+
 console.log(maleAnimals)
 console.log(femaleAnimals)
 
